@@ -1,1 +1,8 @@
-var Cards = ["fa fa-diamond","fa fa-paper-plane-o","fa fa-anchor","fa fa-bolt","fa fa-cube","fa fa-anchor","fa fa-leaf","fa fa-bicycle","fa fa-diamond","fa fa-bomb","fa fa-leaf","fa fa-bomb","fa fa-bolt","fa fa-bicycle","fa fa-paper-plane-o","fa fa-cube"];
+let objects = ['heart', 'heart', 'leaf', 'leaf', 'star', 'star', 'anchor', 'anchor', 'umbrella', 'umbrella', 'thumbs-up', 'thumbs-up', 'trophy', 'trophy', 'tree', 'tree'],
+
+$container = $('.container'),
+$scoreHeader = $('.score-header'),
+$moves = $('.moves'),
+$timer = $('.timer'),
+$restart = $('.restart'),
+$deck = $('.deck'),
