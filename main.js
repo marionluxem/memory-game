@@ -1,5 +1,5 @@
 let objects = ['hand-paper-o', 'hand-paper-o', 'hand-lizard-o', 'hand-lizard-o', 'hand-peace-o', 'hand-peace-o', 'thumbs-o-up', 'thumbs-o-up', 'hand-scissors-o', 'hand-scissors-o', 'hand-spock-o', 'hand-spock-o'],
-// for testing: let objects = ['hand-o-left', 'hand-o-left', 'hand-paper-o', 'hand-paper-o'],
+// let objects = ['hand-o-left', 'hand-o-left', 'hand-paper-o', 'hand-paper-o'],
 
 //jQuery shortcuts
 $container = $('.container'),
@@ -8,9 +8,13 @@ $rating = $('.fa-star'),
 $moves = $('.moves'),
 $timer = $('.timer'),
 $startButton = $('.start-button'),
-$restartContainer = $('.restart-container'),
+// $restartContainer = $('.restart-container'),
 $deck = $('.deck'),
 $subheading = $('.subheading'),
+$modal = $('#modal'),
+$movesModal = ('#moves.modal'),
+$secondsModal = ('#seconds.modal'),
+$scoreModal = ('#score.modal'),
 
 nowTime,
 allOpen = [],
@@ -54,6 +58,8 @@ function shuffle(array) {
     second = 0;
     $timer.text(`${second}`)
     initTime();
+    $startButton.remove();
+
 })
 
 function rating(moves) {
@@ -69,24 +75,24 @@ function rating(moves) {
     return { score: rating };
 }
 
-$restartContainer.click(function init() {
+$('.restart-container').click(function init() {
     let allCards = shuffle(objects);
     $deck.empty();
-    
+
     match = 0;
     moves = 0;
-    $timer.text('0');
-    
+    $moves.text('0');
+
     for (let i = 0; i < allCards.length; i++) {
         $deck.append($('<li class="card"><i class="fa fa-' + allCards[i] + '"></i></li>'))
     }
     addCardListener();
-    
+
     resetTimer(nowTime);
-    $second = 0;
+    second = 0;
     $timer.text(`${second}`)
     initTime();
-});
+})
 
 let addCardListener = function () {
     $deck.find('.card').bind('click', function () {
@@ -125,7 +131,11 @@ let addCardListener = function () {
             if (totalCard === match) {
                 clearInterval(nowTime);
                 let score = rating(moves).score;
-                alert(`YOU WIN! You made a total of ${moves} moves in ${second} seconds with a score of ${score} stars. Woohoo!`);
+                $modal.removeClass(`hide`);
+                $('#moves-modal').text(`${moves}`);
+                $('#seconds-modal').text(`${second}`);
+                $('#score-modal').text(`${score}`);
+                // alert(`YOU WIN! You made a total of ${moves} moves in ${second} seconds with a score of ${score} stars. Woohoo!`);
             }
     });
 }
@@ -142,3 +152,23 @@ function resetTimer(timer) {
         clearInterval(timer);
     }
 }
+
+$('.play-again-container').click(function init() {
+    $modal.addClass(`hide`);
+    let allCards = shuffle(objects);
+    $deck.empty();
+
+    match = 0;
+    moves = 0;
+    $moves.text('0');
+
+    for (let i = 0; i < allCards.length; i++) {
+        $deck.append($('<li class="card"><i class="fa fa-' + allCards[i] + '"></i></li>'))
+    }
+    addCardListener();
+
+    resetTimer(nowTime);
+    second = 0;
+    $timer.text(`${second}`)
+    initTime();
+})

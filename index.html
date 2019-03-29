@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Brain Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
 </head>
@@ -63,6 +61,12 @@
         </svg>
         </div>
     <!-- end brain animation html -->
+    <div id="modal" class="hide">
+        <!-- <button id="x-button">x</button> -->
+        <h1 id="you-win">YOU WIN!</h1>
+        <p>You made a total of <span id="moves-modal"></span> moves in <span id="seconds-modal"></span> seconds with a score of <span id="score-modal"></span> stars. Woohoo!</p>
+        <button class="play-again-container" id="play-again">PLAY AGAIN</button>
+    </div>
     <div class="container">
         <h1>Brain Game</h1>
         <button class="start-button">START!</button>
@@ -89,9 +93,9 @@
         <ul class="deck"></ul>
     </div>
 
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js'></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js'></script>
     <script src="main.js"></script>
 </body>
 </html>

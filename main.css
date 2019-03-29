@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=ABeeZee');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
 body {
     background-color: #355c7d;
     font-family: 'ABeeZee', sans-serif;
@@ -6,6 +9,43 @@ body {
     width: 100%;
     height: 100%;
     font-size: 16px;
+}
+
+.show {
+    display: flex;
+}
+
+.hide {
+    display: none;
+}
+
+#you-win {
+    color: #355c7d;
+}
+
+#modal {
+    text-align: center;
+    background-color: #D3D3D3;
+    color: #355c7d;
+    width: 325px;
+    margin: auto;
+    margin-top: 80px;
+    padding: 25px;
+    box-shadow: 0px 0px 30px 1px rgba(0,0,0,0.3);
+    border-radius: 2%;
+    /* z-index: -9999; */
+}
+
+#play-again {
+    background-color: #f67280;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 150px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 h1 {
@@ -41,6 +81,8 @@ h1 {
     align-content: center;
     padding-inline-start: 20px;
     padding-inline-end: 20px;
+    /* z-index: -1; */
+
 }
 
 .deck .card {
@@ -105,7 +147,6 @@ h1 {
     flex-direction: column-reverse;
     align-items: center;
     cursor: pointer;
-
 }
 
 .timer-container {
