@@ -1,0 +1,235 @@
+body {
+    background-color: #355c7d;
+    font-family: 'ABeeZee', sans-serif;
+    color: white;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+h1 {
+    font-family: 'Varela Round', sans-serif;
+    color: #fff;
+    font-size: 42px;
+}
+
+.start-button {
+    background-color: #f67280;
+    color: #fff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 150px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.deck {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    align-content: center;
+    padding-inline-start: 20px;
+    padding-inline-end: 20px;
+}
+
+.deck .card {
+    height: 75px;
+    width: 75px;
+    margin-bottom: 20px;
+    background: #f67280;
+    font-size: 0;
+    color: #f8b195;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(0) !important;
+    background: #c06c84;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 50px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #a8e6ce;
+    color: #355c7d;
+    font-size: 50px;
+    visibility: hidden;
+}
+
+.score-header {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.score-header .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-header .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-header .restart {
+    float: right;
+    cursor: pointer;
+    padding-left: 15px;
+}
+
+.restart-container {
+    margin-top: 5px; 
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.timer-container {
+    padding-left: 15px;
+}
+
+@media only screen and (min-width: 800px){
+    .deck .card{
+      width: 175px;
+      height: 175px;
+      line-height: 175px;
+    }
+  
+    .deck {
+      width: 800px;
+    }
+}
+
+/* start brain animation css */
+svg {
+    display: block;
+    height: 18vh;
+    left: Opx;
+    margin: auto;
+    margin-bottom: -20px;
+    padding: 2%;
+ }
+ 
+ .cls-1,
+ .dotclass {
+    fill: #f8b195;
+ }
+ 
+ #dot1 {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+    animation-delay: -71ms;
+ }
+ 
+ #dot2 {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+    animation-delay: -142ms;
+ }
+ 
+ #dot3 {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+    animation-delay: -213ms;
+ }
+ 
+ #dot4 {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+    animation-delay: -284ms;
+ }
+ 
+ #dot5 {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+    animation-delay: -355ms;
+ }
+ 
+ #dot6 {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+    animation-delay: -426ms;
+ }
+ 
+ #dot7 {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+    animation-delay: -497ms;
+ }
+ 
+ #dot8 {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+    animation-delay: -568ms;
+ }
+ 
+ #dot9 {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+    animation-delay: -639ms;
+ }
+ 
+ #dot10 {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+    animation-delay: -710ms;
+ }
+ 
+ #dot11 {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+    animation-delay: -781ms;
+ }
+ 
+ #dot12 {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+    animation-delay: -852ms;
+ }
+ 
+ #dot13 {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+    animation-delay: -923ms;
+ }
+ 
+ #dot14 {
+    animation: heartbeat 1.5s ease-in-out infinite both;
+    animation-delay: -1000ms;
+ }
+ 
+ @keyframes heartbeat {
+    from {
+       transform: scale(1);
+       transform-origin: center center;
+       animation-timing-function: ease-out;
+    }
+    10% {
+       transform: scale(0.8);
+       animation-timing-function: ease-in;
+    }
+    17% {
+       transform: scale(1.2);
+       animation-timing-function: ease-out;
+    }
+    33% {
+       transform: scale(0.8);
+       animation-timing-function: ease-in;
+    }
+    45% {
+       transform: scale(1);
+       animation-timing-function: ease-out;
+    }
+ }
+/* end brain animation css */
