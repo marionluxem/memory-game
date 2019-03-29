@@ -1,5 +1,5 @@
-// let objects = ['hand-paper-o', 'hand-paper-o', 'hand-lizard-o', 'hand-lizard-o', 'hand-peace-o', 'hand-peace-o', 'thumbs-o-up', 'thumbs-o-up', 'hand-scissors-o', 'hand-scissors-o', 'hand-spock-o', 'hand-spock-o'],
-let objects = ['hand-o-left', 'hand-o-left', 'hand-paper-o', 'hand-paper-o'],
+let objects = ['hand-paper-o', 'hand-paper-o', 'hand-lizard-o', 'hand-lizard-o', 'hand-peace-o', 'hand-peace-o', 'thumbs-o-up', 'thumbs-o-up', 'hand-scissors-o', 'hand-scissors-o', 'hand-spock-o', 'hand-spock-o'],
+// let objects = ['hand-o-left', 'hand-o-left', 'hand-paper-o', 'hand-paper-o'],
 
 //jQuery shortcuts
 $container = $('.container'),
@@ -130,7 +130,6 @@ let addCardListener = function () {
         }
             if (totalCard === match) {
                 clearInterval(nowTime);
-                // $('.restart-container').detach();
                 $('.restart-container').hide();
                 let score = rating(moves).score;
                 $modal.removeClass(`hide`);
