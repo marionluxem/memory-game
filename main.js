@@ -25,7 +25,7 @@ wait = 420,
 totalCard = objects.length / 2,
 
 stars3 = 10,
-stars2 = 12,
+stars2 = 13,
 star1 = 16;
 
 function shuffle(array) {
