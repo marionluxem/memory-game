@@ -1,5 +1,4 @@
 let objects = ['hand-paper-o', 'hand-paper-o', 'hand-lizard-o', 'hand-lizard-o', 'hand-peace-o', 'hand-peace-o', 'thumbs-o-up', 'thumbs-o-up', 'hand-scissors-o', 'hand-scissors-o', 'hand-spock-o', 'hand-spock-o'],
-// let objects = ['hand-o-left', 'hand-o-left', 'hand-paper-o', 'hand-paper-o'],
 
 //jQuery shortcuts
 $container = $('.container'),
@@ -8,7 +7,6 @@ $rating = $('.fa-star'),
 $moves = $('.moves'),
 $timer = $('.timer'),
 $startButton = $('.start-button'),
-// $restartContainer = $('.restart-container'),
 $deck = $('.deck'),
 $subheading = $('.subheading'),
 $modal = $('#modal'),
@@ -24,9 +22,9 @@ moves = 0,
 wait = 420,
 totalCard = objects.length / 2,
 
-stars3 = 10,
-stars2 = 13,
-star1 = 16;
+threeStars = 10,
+twoStars = 13,
+oneStar = 16;
 
 function shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
@@ -59,16 +57,15 @@ function shuffle(array) {
     $timer.text(`${second}`)
     initTime();
     $startButton.remove();
-
 })
 
 function rating(moves) {
     let rating = 3;
-    if (moves > stars3 && moves < stars2) {
+    if (moves > threeStars && moves < twoStars) {
         $rating.eq(3).removeClass('fa-star').addClass('fa-star-o');
-    } else if (moves > stars2 && moves < star1) {
+    } else if (moves > twoStars && moves < oneStar) {
         $rating.eq(2).removeClass('fa-star').addClass('fa-star-o');
-    } else if (moves > star1) {
+    } else if (moves > oneStar) {
         $rating.eq(1).removeClass('fa-star').addClass('fa-star-o');
         rating = 1;
     }
@@ -100,7 +97,6 @@ let addCardListener = function () {
 
         if ($this.hasClass('show') || $this.hasClass('match')) { return true; }
 
-
         let card = $this.context.innerHTML;
         $this.addClass('open show');
         allOpen.push(card);
@@ -114,7 +110,6 @@ let addCardListener = function () {
                     // $(".deck .card.match").remove();
                 }, wait);
             match++;
-            
 
             } else {
             $deck.find('.open').addClass('notmatch');
